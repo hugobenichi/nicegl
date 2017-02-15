@@ -1,0 +1,85 @@
+package glfw // import "github.com/go-gl/glfw/v3.2/glfw"
+
+const CursorNormal int = C.GLFW_CURSOR_NORMAL ...
+const VersionMajor = C.GLFW_VERSION_MAJOR ...
+const OpenGLAPI int = C.GLFW_OPENGL_API ...
+const NativeContextAPI int = C.GLFW_NATIVE_CONTEXT_API ...
+const NoRobustness int = C.GLFW_NO_ROBUSTNESS ...
+const AnyReleaseBehavior int = C.GLFW_ANY_RELEASE_BEHAVIOR ...
+const OpenGLAnyProfile int = C.GLFW_OPENGL_ANY_PROFILE ...
+const True int = C.GL_TRUE ...
+const Release Action = C.GLFW_RELEASE ...
+const APIUnavailable ErrorCode = C.GLFW_API_UNAVAILABLE ...
+const Focused Hint = C.GLFW_FOCUSED ...
+const ClientAPI Hint = C.GLFW_CLIENT_API ...
+const ContextRevision Hint = C.GLFW_CONTEXT_REVISION ...
+const CursorMode InputMode = C.GLFW_CURSOR ...
+const Joystick1 Joystick = C.GLFW_JOYSTICK_1 ...
+const KeyUnknown Key = C.GLFW_KEY_UNKNOWN ...
+const ModShift ModifierKey = C.GLFW_MOD_SHIFT ...
+const Connected MonitorEvent = C.GLFW_CONNECTED ...
+const MouseButton1 MouseButton = C.GLFW_MOUSE_BUTTON_1 ...
+const ArrowCursor StandardCursor = C.GLFW_ARROW_CURSOR ...
+func DefaultWindowHints()
+func DetachCurrentContext()
+func ExtensionSupported(extension string) bool
+func GetJoystickAxes(joy Joystick) []float32
+func GetJoystickButtons(joy Joystick) []byte
+func GetJoystickName(joy Joystick) string
+func GetKeyName(key Key, scancode int) string
+func GetMonitors() []*Monitor
+func GetTime() float64
+func GetTimerFrequency() uint64
+func GetTimerValue() uint64
+func GetVersion() (major, minor, revision int)
+func GetVersionString() string
+func Init() error
+func JoystickPresent(joy Joystick) bool
+func PollEvents()
+func PostEmptyEvent()
+func SetMonitorCallback(cbfun func(monitor *Monitor, event MonitorEvent))
+func SetTime(time float64)
+func SwapInterval(interval int)
+func Terminate()
+func VulkanSupported() bool
+func WaitEvents()
+func WaitEventsTimeout(timeout float64)
+func WindowHint(target Hint, hint int)
+func CreateCursor(img image.Image, xhot, yhot int) *Cursor
+func CreateStandardCursor(shape int) *Cursor
+func SetJoystickCallback(cbfun JoystickCallback) (previous JoystickCallback)
+func GetPrimaryMonitor() *Monitor
+func CreateWindow(width, height int, title string, monitor *Monitor, share *Window) (*Window, error)
+func GetCurrentContext() *Window
+type Action int
+type CharCallback func(w *Window, char rune)
+type CharModsCallback func(w *Window, char rune, mods ModifierKey)
+type CloseCallback func(w *Window)
+type Cursor struct { ... }
+type CursorEnterCallback func(w *Window, entered bool)
+type CursorPosCallback func(w *Window, xpos float64, ypos float64)
+type DropCallback func(w *Window, names []string)
+type Error struct { ... }
+type ErrorCode int
+type FocusCallback func(w *Window, focused bool)
+type FramebufferSizeCallback func(w *Window, width int, height int)
+type GammaRamp struct { ... }
+type Hint int
+type IconifyCallback func(w *Window, iconified bool)
+type InputMode int
+type Joystick int
+type JoystickCallback func(joy, event int)
+type Key int
+type KeyCallback func(w *Window, key Key, scancode int, action Action, mods ModifierKey)
+type ModifierKey int
+type Monitor struct { ... }
+type MonitorEvent int
+type MouseButton int
+type MouseButtonCallback func(w *Window, button MouseButton, action Action, mod ModifierKey)
+type PosCallback func(w *Window, xpos int, ypos int)
+type RefreshCallback func(w *Window)
+type ScrollCallback func(w *Window, xoff float64, yoff float64)
+type SizeCallback func(w *Window, width int, height int)
+type StandardCursor int
+type VidMode struct { ... }
+type Window struct { ... }
